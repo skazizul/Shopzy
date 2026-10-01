@@ -1,0 +1,264 @@
+.home {
+  min-height: calc(100vh - 80px);
+  padding: 60px 8%;
+  background: linear-gradient(135deg, #f8fbff, #eef4ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero {
+  max-width: 850px;
+  text-align: center;
+  padding-bottom: 15px;
+  padding-top: 20px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #111827;
+  font-style: italic;
+
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 18px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #64748b;
+}
+
+.hero button {
+  margin-top: 25px;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 10px;
+  background: #111827;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hero button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Categories Section */
+
+.categories {
+  padding: 80px 8%;
+  text-align: center;
+  background: #ffffff;
+}
+
+.categories h2 {
+  font-size: 36px;
+  margin-bottom: 45px;
+  color: #111827;
+  font-weight: 750;
+}
+
+.categories-container {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.categories-card {
+  padding: 35px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.categories-card svg {
+  font-size: 48px;
+  margin-bottom: 18px;
+  color: #111827;
+}
+
+.categories-card p {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.categories-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border-color: #d1d5db;
+}
+
+.all-products {
+  max-width: 1200px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+
+.products-section {
+  max-width: 1200px;
+  margin: 80px auto 0;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.products-section h2 {
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 750;
+  color: #111827;
+}
+
+.products-section p {
+  margin: 0;
+  font-size: 17px;
+  color: #64748b;
+}
+
+.selected-product {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px;
+  text-align: center;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.selected-product img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  margin: 20px auto;
+  display: block;
+}
+
+.selected-product h2 {
+  font-size: 28px;
+  color: #111827;
+}
+
+.selected-product h3 {
+  font-size: 24px;
+  margin: 15px 0 8px;
+  color: #111827;
+}
+
+.selected-product p {
+  color: #64748b;
+  margin: 8px 0;
+}
+
+.selected-product p:last-child {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.selected-product button {
+  margin-top: 20px;
+  padding: 13px 28px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #111827;
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.selected-product button:hover {
+  background: #374151;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.selected-product button:active {
+  transform: translateY(0);
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.quantity-control button {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+
+  background: #111827;
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.quantity-control button:hover {
+  background: #374151;
+  transform: scale(1.05);
+}
+
+.quantity-control span {
+  min-width: 30px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+@media (max-width: 900px) {
+  .all-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .all-products {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,99 @@
+
+.navigation{
+  width: 100%;
+  background-color: #131921;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  z-index: 1;
+}
+
+.logo{
+  background-image: url("../assets/logo.png");
+  width: 45px;
+  height: 45px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.nav-links a.active {
+  color: #2563eb;
+}
+
+.logo-container{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logo-container p{
+  font-style: italic;
+  font-weight: 700;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+
+.logo-container p span{
+  color: #F08804;
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+  height: 100%;
+  align-items: center;
+
+}
+
+.nav-links a{
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #FFFFFF
+}
+
+.nav-links a sup{
+  color: #F08804;
+  margin-left: 4px;
+  font-size: 0.9rempx;
+  font-weight: bold;
+
+}
+
+.nav-links a :hover{
+  color: #7B1EF8;
+}
+
+.button-login-container{
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-login-container button{
+  width: 86px;
+  height: 35px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+
+#sign-up-button{
+  background-color: #F08804;
+  color: black;
+  font-weight: 600
+}
