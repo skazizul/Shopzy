@@ -14,6 +14,7 @@ function ProductDetails({ cart, setCart }) {
       name: "Laptop",
       description: "This is laptop",
       price: 59999,
+      catagory:"electronics"
     },
     {
       id: 2,
@@ -21,6 +22,7 @@ function ProductDetails({ cart, setCart }) {
       name: "Phone",
       description: "This is phone",
       price: 19999,
+      catagory:"electronics"
     },
     {
       id: 3,
@@ -28,6 +30,7 @@ function ProductDetails({ cart, setCart }) {
       name: "Watch",
       description: "This is watch",
       price: 9999,
+      catagory:"electronics"
     },
   ];
 
