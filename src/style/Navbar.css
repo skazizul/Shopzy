@@ -1,5 +1,4 @@
-
-.navigation{
+.navigation {
   width: 100%;
   background-color: #131921;
   height: 60px;
@@ -10,7 +9,7 @@
   z-index: 1;
 }
 
-.logo{
+.logo {
   background-image: url("../assets/logo.png");
   width: 45px;
   height: 45px;
@@ -26,62 +25,113 @@
   color: #2563eb;
 }
 
-.logo-container{
+.logo-container {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   gap: 10px;
   cursor: pointer;
 }
 
-.logo-container p{
+.logo-container p {
   font-style: italic;
   font-weight: 700;
   cursor: pointer;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.logo-container p span{
-  color: #F08804;
+.logo-container p span {
+  color: #f08804;
 }
 
-.nav-links{
+.nav-links {
   display: flex;
   justify-content: space-evenly;
-  width: 40%;
+  width: 30%;
   height: 100%;
   align-items: center;
-
 }
 
-.nav-links a{
+.nav-links a {
   text-decoration: none;
   text-transform: capitalize;
   font-weight: 600;
   font-size: 0.9rem;
   font-style: italic;
-  color: #FFFFFF
+  color: #ffffff;
 }
 
-.nav-links a sup{
-  color: #F08804;
+.nav-links a sup {
+  color: #f08804;
   margin-left: 4px;
   font-size: 0.9rempx;
   font-weight: bold;
-
 }
 
-.nav-links a :hover{
-  color: #7B1EF8;
+.nav-links a :hover {
+  color: #7b1ef8;
 }
 
-.button-login-container{
+.button-login-container {
   width: 15%;
   display: flex;
   justify-content: space-around;
 }
 
-.button-login-container button{
+.searchbar {
+  width: 30%;
+  background-color: white;
+  display: flex;
+  gap: 0 20px;
+  align-items: center;
+  height: 38px;
+  border-radius: 5px;
+}
+
+.searchicon {
+  font-size: 1.2rem;
+  margin-left: 15px;
+}
+
+.searchBox {
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin: 7px;
+  outline: 0;
+  color: #111;
+  background: 0 0;
+  text-overflow: ellipsis;
+}
+
+#catagory {
+  height: 42px;
+  padding: 0 10px 0 10px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #374151;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  outline: none;
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+#catagory:hover {
+  border-color: #cbd5e1;
+}
+
+#catagory:focus {
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+.button-login-container button {
   width: 86px;
   height: 35px;
   border-radius: 6px;
@@ -91,9 +141,8 @@
   cursor: pointer;
 }
 
-
-#sign-up-button{
-  background-color: #F08804;
+#sign-up-button {
+  background-color: #f08804;
   color: black;
-  font-weight: 600
+  font-weight: 600;
 }

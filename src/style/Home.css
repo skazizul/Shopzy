@@ -251,6 +251,27 @@
   color: #111827;
 }
 
+.noProductFound {
+  min-height: 250px;
+  margin: 30px 0;
+  padding: 40px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+}
+
+.noProductFound-text {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #64748b;
+}
+
 @media (max-width: 900px) {
   .all-products {
     grid-template-columns: repeat(2, 1fr);

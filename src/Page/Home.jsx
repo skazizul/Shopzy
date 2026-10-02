@@ -8,8 +8,9 @@ import ProductCard from "../Components/Productcard";
 import productId1 from "../assets/productID1.webp";
 import productId2 from "../assets/productID2.webp";
 import productId3 from "../assets/productID3.webp";
+import { useState } from "react";
 
-function Home({ cart, setCart }) {
+function Home({ cart, setCart, searchInput, Catagory }) {
   const productItems = [
     {
       id: 1,
@@ -17,6 +18,7 @@ function Home({ cart, setCart }) {
       name: "Laptop",
       description: "This is laptop",
       price: 59999,
+      catagory: "electronics",
     },
     {
       id: 2,
@@ -24,6 +26,7 @@ function Home({ cart, setCart }) {
       name: "Phone",
       description: "This is phone",
       price: 19999,
+      catagory: "electronics",
     },
     {
       id: 3,
@@ -31,8 +34,67 @@ function Home({ cart, setCart }) {
       name: "Watch",
       description: "This is watch",
       price: 9999,
+      catagory: "electronics",
     },
   ];
+
+  const filterProduct = productItems.filter((item) =>
+    item.name.toLowerCase().includes(searchInput.toLowerCase()),
+  );
+
+  const catagoryProduct = productItems.filter(
+    (item) => item.catagory === Catagory,
+  );
+
+  if (filterProduct.length === 0) {
+    return (
+      <div className="noProductFound">
+        <p className="noProductFound-text">No Product Found</p>
+      </div>
+    );
+  }
+
+  if (searchInput.length > 0) {
+    return (
+      <div className="all-products">
+        {filterProduct.map((item) => (
+          <ProductCard
+            key={item.id}
+            id={item.id}
+            image={item.image}
+            productName={item.name}
+            description={item.description}
+            price={item.price}
+          />
+        ))}
+      </div>
+    );
+  }
+
+  if (catagoryProduct.length === 0 && Catagory !== "all") {
+    return (
+      <div className="noProductFound">
+        <p className="noProductFound-text">No Product Found</p>
+      </div>
+    );
+  }
+
+  if (Catagory !== "all") {
+    return (
+      <div className="all-products">
+        {catagoryProduct.map((item) => (
+          <ProductCard
+            key={item.id}
+            id={item.id}
+            image={item.image}
+            productName={item.name}
+            description={item.description}
+            price={item.price}
+          />
+        ))}
+      </div>
+    );
+  }
 
   return (
     <main className="home">

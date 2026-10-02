@@ -9,6 +9,8 @@ import CheckOut from "./Components/CheckOut";
 import OrderSuccessfull from "./Components/OrderSuccessfull";
 
 function App() {
+  const [searchInput,setSearchinput] = useState("");
+  const [catagory,setCatagory] = useState("all");
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem('cart');
     return savedCart ? JSON.parse(savedCart):[]
@@ -19,10 +21,10 @@ function App() {
 
   return (
     <div>
-      <Navbar cartCount={cart.length} />
+      <Navbar cartCount={cart.length} setSearchinput={setSearchinput} setCatagory={setCatagory} />
 
       <Routes>
-        <Route path="/" element={<Home cart={cart} setCart={setCart} />} />
+        <Route path="/" element={<Home cart={cart} setCart={setCart} searchInput = {searchInput} Catagory={catagory}/>} />
 
         <Route
           path="/products/:id"
