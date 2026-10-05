@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../style/Navbar.css";
 import { IoSearch } from "react-icons/io5";
 function Navbar({ cartCount,setSearchinput,setCatagory }) {
+  const navigation = useNavigate();
   const handleClick = (item) =>{
     setSearchinput(item.target.value);
   }
@@ -31,7 +32,7 @@ function Navbar({ cartCount,setSearchinput,setCatagory }) {
         </select>
       <div className="button-login-container">
         <button>Login</button>
-        <button id="sign-up-button">Sign Up</button>
+        <button id="sign-up-button" onClick={() => navigation("/sign-up")}>Sign Up</button>
       </div>
     </div>
   );

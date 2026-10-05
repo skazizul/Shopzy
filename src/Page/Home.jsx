@@ -8,7 +8,6 @@ import ProductCard from "../Components/Productcard";
 import productId1 from "../assets/productID1.webp";
 import productId2 from "../assets/productID2.webp";
 import productId3 from "../assets/productID3.webp";
-import { useState } from "react";
 
 function Home({ cart, setCart, searchInput, Catagory }) {
   const productItems = [
