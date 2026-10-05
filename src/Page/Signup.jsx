@@ -3,7 +3,7 @@ import "../style/Signup.css";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
 import { useNavigate } from "react-router";
 
-function Signup({ signupData, setSignupdata }) {
+function Signup({ signupData, setSignupdata,isLogin }) {
   const [showPass, setPass] = useState(false);
   const [showConfirmPass, setConfirmPass] = useState(false);
   const [error, setError] = useState("");
@@ -58,7 +58,7 @@ function Signup({ signupData, setSignupdata }) {
       : storedUsers
         ? [storedUsers]
         : [];
-    oldUsers.push(signupData);
+    oldUsers.push({...signupData,login:false});
     localStorage.setItem("users", JSON.stringify(oldUsers));
 
     navigation("/");

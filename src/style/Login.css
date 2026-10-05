@@ -1,0 +1,130 @@
+.login-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #f8fafc;
+}
+
+.loginContainer {
+  width: 100%;
+  max-width: 430px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.loginContainer h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 30px;
+  color: #111827;
+}
+
+.loginContainer > p {
+  margin: -5px 0 15px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.loginContainer input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.loginContainer input:focus {
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  padding: 13px 45px 13px 14px;
+}
+
+.showPassButton {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.showPassButton:hover {
+  color: #111827;
+}
+
+.loginButton {
+  margin-top: 8px;
+  padding: 13px;
+  border: none;
+  border-radius: 9px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.loginButton:hover {
+  background: #1f2937;
+}
+
+.signup-link {
+  margin: 4px 0 0 !important;
+  color: #64748b;
+  text-align: center;
+  font-size: 14px;
+}
+
+.signup-link span {
+  color: #111827;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signup-link span:hover {
+  text-decoration: underline;
+}
+
+.login-message {
+  margin: -5px 0 0 !important;
+  text-align: center;
+  font-size: 14px !important;
+  font-weight: 600;
+}
+
+.login-message.success {
+  color: #16a34a !important;
+}
+
+.login-message.error {
+  color: #dc2626 !important;
+}
+

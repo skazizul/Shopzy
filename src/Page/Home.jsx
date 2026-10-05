@@ -5,38 +5,7 @@ import { PiBowlFood } from "react-icons/pi";
 import { GiLifeBar } from "react-icons/gi";
 import ProductCard from "../Components/Productcard";
 
-import productId1 from "../assets/productID1.webp";
-import productId2 from "../assets/productID2.webp";
-import productId3 from "../assets/productID3.webp";
-
-function Home({ cart, setCart, searchInput, Catagory }) {
-  const productItems = [
-    {
-      id: 1,
-      image: productId1,
-      name: "Laptop",
-      description: "This is laptop",
-      price: 59999,
-      catagory: "electronics",
-    },
-    {
-      id: 2,
-      image: productId2,
-      name: "Phone",
-      description: "This is phone",
-      price: 19999,
-      catagory: "electronics",
-    },
-    {
-      id: 3,
-      image: productId3,
-      name: "Watch",
-      description: "This is watch",
-      price: 9999,
-      catagory: "electronics",
-    },
-  ];
-
+function Home({searchInput, Catagory,productItems }) {
   const filterProduct = productItems.filter((item) =>
     item.name.toLowerCase().includes(searchInput.toLowerCase()),
   );
