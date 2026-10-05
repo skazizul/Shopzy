@@ -3,7 +3,7 @@ import "../style/Signup.css";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
 import { useNavigate } from "react-router";
 
-function Signup({signupData,setSignupdata}) {
+function Signup({ signupData, setSignupdata }) {
   const [showPass, setPass] = useState(false);
   const [showConfirmPass, setConfirmPass] = useState(false);
   const [error, setError] = useState("");
@@ -51,14 +51,17 @@ function Signup({signupData,setSignupdata}) {
     if (!validationChecker()) {
       return;
     }
-    // setSignupdata((data) => ({
-    //   ...data,
-    //   login:true
-    // }))
-    signupData.login = true;
-    localStorage.setItem("users",JSON.stringify(signupData))
-    
-    navigation("/")
+    const storedUsers = JSON.parse(localStorage.getItem("users"));
+
+    const oldUsers = Array.isArray(storedUsers)
+      ? storedUsers
+      : storedUsers
+        ? [storedUsers]
+        : [];
+    oldUsers.push(signupData);
+    localStorage.setItem("users", JSON.stringify(oldUsers));
+
+    navigation("/");
   };
 
   return (
@@ -129,10 +132,7 @@ function Signup({signupData,setSignupdata}) {
           {error1 && <p className="password-error">{error1}</p>}
         </div>
 
-        <button
-          type="submit"
-          className="createAccountBtn"
-        >
+        <button type="submit" className="createAccountBtn">
           Create Account
         </button>
       </form>
