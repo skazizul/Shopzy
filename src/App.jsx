@@ -7,6 +7,7 @@ import ProductDetails from "./Components/ProductDetails";
 import Cart from "./Page/Cart";
 import CheckOut from "./Components/CheckOut";
 import OrderSuccessfull from "./Components/OrderSuccessfull";
+import Signup from "./Page/Signup";
 
 function App() {
   const [searchInput,setSearchinput] = useState("");
@@ -15,6 +16,13 @@ function App() {
     const savedCart = localStorage.getItem('cart');
     return savedCart ? JSON.parse(savedCart):[]
   });
+  const [signupData, setSignupdata] = useState({
+    name: "",
+    email: "",
+    password: "",
+    rePassword: "",
+  });
+  const [isLogin, setLogin] = useState(false);
   useEffect(()=>{
     localStorage.setItem('cart',JSON.stringify(cart))
   },[cart]);
@@ -24,7 +32,7 @@ function App() {
       <Navbar cartCount={cart.length} setSearchinput={setSearchinput} setCatagory={setCatagory} />
 
       <Routes>
-        <Route path="/" element={<Home cart={cart} setCart={setCart} searchInput = {searchInput} Catagory={catagory}/>} />
+        <Route path="/" element={<Home cart={cart} setCart={setCart} searchInput = {searchInput} Catagory={catagory} />} />
 
         <Route
           path="/products/:id"
@@ -34,6 +42,7 @@ function App() {
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
         <Route path="/cart/checkout" element={<CheckOut cart={cart}/>}/>
         <Route path="/cart/checkout/place-order" element={<OrderSuccessfull/>}/>
+        <Route path="/sign-up" element={<Signup signupData = {signupData} setSignupdata ={setSignupdata}/>}/>
       </Routes>
     </div>
   );
