@@ -1,0 +1,156 @@
+.products-page {
+  min-height: calc(100vh - 72px);
+  padding: 45px 5%;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
+/* Page Header */
+
+.products-page::before {
+  content: "All Products";
+  display: block;
+
+  margin-bottom: 30px;
+
+  color: #111827;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+/* Product Grid */
+
+.products-page .all-products {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Product Card */
+
+.products-page .product-container {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  padding: 18px;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.products-page .product-container:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+}
+
+/* Product Image */
+
+.products-page .product-img {
+  width: 100%;
+  height: 220px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f8fafc;
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.products-page .product-img img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+.products-page .product-container:hover .product-img img {
+  transform: scale(1.05);
+}
+
+/* Product Name */
+
+.products-page .product-container h3 {
+  margin: 16px 0 7px;
+
+  color: #111827;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Description */
+
+.products-page .product-container p {
+  margin: 0 0 10px;
+
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Price */
+
+.products-page .product-container p:last-of-type {
+  color: #111827;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* View Button */
+
+.products-page .product-container button {
+  width: 100%;
+
+  margin-top: 8px;
+  padding: 11px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #111827;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.products-page .product-container button:hover {
+  background: #2563eb;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+  .products-page .all-products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .products-page .all-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .products-page {
+    padding: 30px 20px;
+  }
+
+  .products-page .all-products {
+    grid-template-columns: 1fr;
+  }
+}

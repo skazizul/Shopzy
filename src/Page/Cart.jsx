@@ -2,35 +2,13 @@
 import { useNavigate } from "react-router";
 import "../style/Cart.css";
 import { RiCloseLargeFill } from "react-icons/ri";
+import { useContext } from "react";
+import { CartContext } from "../Context/CartContext";
 
-function Cart({ cart, setCart }) {
+function Cart() {
+  const { cart,removeFromCart,updateQuantity } = useContext(CartContext);
   const navigate = useNavigate();
-  const increaseQuantity = (productId) => {
-    setCart(
-      cart.map((item) => {
-        return item.id === productId
-          ? { ...item, quantity: item.quantity + 1 }
-          : item;
-      }),
-    );
-  };
-
-  const decreaseQuantity = (productId) => {
-    setCart(
-      cart.map((item) => {
-        return item.id === productId && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item;
-      }),
-    );
-  };
-
-  const removeItem = (productId) => {
-    const existingProducts = cart.filter((item) => {
-      return item.id !== productId;
-    });
-    setCart(existingProducts);
-  };
+  
 
   const totalPrice = cart.reduce((totalprice, item) => {
     return totalprice + item.quantity * item.price;
@@ -67,15 +45,15 @@ function Cart({ cart, setCart }) {
                 </div>
 
                 <div className="quantity-control">
-                  <button onClick={() => decreaseQuantity(item.id)}>-</button>
+                  <button onClick={() => updateQuantity(item.id,"decrease")}>-</button>
 
                   <span>{item.quantity}</span>
 
-                  <button onClick={() => increaseQuantity(item.id)}>+</button>
+                  <button onClick={() => updateQuantity(item.id,"increase")}>+</button>
                 </div>
                 <RiCloseLargeFill
                   className="removeItem"
-                  onClick={() => removeItem(item.id)}
+                  onClick={() => removeFromCart(item.id)}
                 />
               </div>
             ))}
