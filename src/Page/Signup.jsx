@@ -3,7 +3,7 @@ import "../style/Signup.css";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
 import { useNavigate } from "react-router";
 
-function Signup({ signupData, setSignupdata,isLogin }) {
+function Signup({ signupData, setSignupdata }) {
   const [showPass, setPass] = useState(false);
   const [showConfirmPass, setConfirmPass] = useState(false);
   const [error, setError] = useState("");

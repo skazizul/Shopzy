@@ -4,9 +4,10 @@ import "../style/Cart.css";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
+import useCart from "../Hooks/useCart";
 
 function Cart() {
-  const { cart,removeFromCart,updateQuantity } = useContext(CartContext);
+  const { cart,removeFromCart,updateQuantity } = useCart();
   const navigate = useNavigate();
   
 

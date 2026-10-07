@@ -4,8 +4,13 @@ import { FaShopify } from "react-icons/fa6";
 import { PiBowlFood } from "react-icons/pi";
 import { GiLifeBar } from "react-icons/gi";
 import ProductCard from "../Components/Productcard";
+import { useEffect, useState } from "react";
+import { getProducts } from "../Services/api";
 
-function Home({searchInput, Catagory,productItems }) {
+function Home({ searchInput, Catagory, productItems }) {
+  const [ products, setProducts ] = useState([]);
+  const [ loading, setLoading ] = useState(true);
+  const [error, setError] = useState("");
   const filterProduct = productItems.filter((item) =>
     item.name.toLowerCase().includes(searchInput.toLowerCase()),
   );
@@ -13,6 +18,31 @@ function Home({searchInput, Catagory,productItems }) {
   const catagoryProduct = productItems.filter(
     (item) => item.catagory === Catagory,
   );
+
+  console.log(products);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const data = await getProducts();
+        setProducts(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return <h2>Loading products...</h2>;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
+  }
 
   if (filterProduct.length === 0) {
     return (
