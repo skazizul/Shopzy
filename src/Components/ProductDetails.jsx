@@ -69,14 +69,14 @@ function ProductDetails() {
         <div className="increase-decrease">
           <button
             className="increase"
-            onClick={() => updateQuantity(item.id,"decrease")}
+            onClick={() => updateQuantity(product.id,"decrease")}
           >
             -
           </button>
           <p className="product-quantity">{cartProduct?.quantity || 0}</p>
           <button
             className="increase"
-            onClick={() => updateQuantity(item.id,"increase")}
+            onClick={() => updateQuantity(product.id,"increase")}
           >
             +
           </button>
