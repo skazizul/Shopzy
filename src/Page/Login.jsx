@@ -48,6 +48,7 @@ function Login({ setLogin,setCurrentUserEmail }) {
       );
       localStorage.setItem("users", JSON.stringify(updatedUsers));
       localStorage.setItem("currentUserEmail", finalUser.email);
+      localStorage.setItem("logedInUser",JSON.stringify(finalUser))
       setLoginMessage("Login successful");
       setMessageType("success");
       setLogin(true);

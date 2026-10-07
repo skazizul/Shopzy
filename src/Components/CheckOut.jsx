@@ -1,10 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import "../style/CheckOut.css";
-import { useContext } from "react";
-import { CartContext } from "../Context/CartContext";
+import useCart from "../Hooks/useCart";
 
 function CheckOut() {
-  const { cart,setCart } = useContext(CartContext);
+  const { cart } = useCart();
   const navigate = useNavigate();
 
   const total = cart.reduce((acc, item) => {

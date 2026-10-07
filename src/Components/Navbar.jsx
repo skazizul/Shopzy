@@ -29,6 +29,7 @@ function Navbar({
     );
     localStorage.setItem("users", JSON.stringify(updatedUsers));
     localStorage.removeItem("currentUserEmail");
+    localStorage.removeItem("logedInUser");
     setLogin(false);
     navigation("/login");
   };
